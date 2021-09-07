@@ -8,3 +8,15 @@ Not with JSON though. XPath 3.1 gives wonderful JSON queries like `?a?b?c` or `?
 This is where xpath-lenses comes in🎉
 
 By using a lens to get a setter to whatever the XPath returned, you can just set it!
+
+## Example (subject to change)
+
+```js
+    const input = { a: 1, b: [1, 2, 3, { c: 4, d: 5, e: [6] }] };
+    const result = createSetter("?b?4?e?1")
+	console.assert(result.isSuccessful === true);
+    const setter = result.lens(input);
+    const resultObject = setter(7);
+    console.assert(resultObject.b[3].e === 7, "Did set the result correctly");
+
+```

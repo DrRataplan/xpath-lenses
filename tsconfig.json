@@ -1,0 +1,13 @@
+{	"compilerOptions": {
+		"baseUrl": ".",
+		"declaration": true,
+		"lib": ["es6", "es2017", "esnext.asynciterable"],
+	"moduleResolution": "node",
+		"noImplicitAny": true,
+		"outDir": "./built",
+		"strict": false,
+		"target": "es2017"
+	},
+	"include": ["./src/**/*", "./node_modules/**/*"],
+	"exclude": ["./**/*.d.ts"]
+}
